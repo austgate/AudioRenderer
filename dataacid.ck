@@ -1,5 +1,5 @@
 /*
-Chuck experiment
+Data on Acid hack
 
 Iain Emsley
 
@@ -14,10 +14,11 @@ Flute flute => PoleZero f => JCRev r => dac;
 .99 => f.blockZero;
 
 .2 => float timeSt;
+// print out all arguments
 
+// print out all arguments
 me.arg(0) => string fname;
-if( name.length() == 0 ) "bio.txt" => filename;
-//"bio.txt"  => string fname;
+<<< fname >>>;
 int drama[5000];
 readInts(fname) @=> drama;
 
@@ -43,7 +44,8 @@ fun int[] readInts(string path) {
     // open the file
     FileIO file;
     if (!file.open(path, FileIO.READ)) {
-        <<<"file opening failed">>>;
+        <<< "file read failed" >>>;
+        <<< path >>>;
         int ret[0]; // error opening the specified file
         return ret;
     }
@@ -51,7 +53,6 @@ fun int[] readInts(string path) {
     // read the size of the array
     //4096 => int size;
     file => int size;
-    <<< size >>>;
     // now read in the contents
     int ret[size];
     for (0 => int i; i < size; i++) 
